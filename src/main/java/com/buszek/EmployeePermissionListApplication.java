@@ -27,7 +27,8 @@ public class EmployeePermissionListApplication {
 		return (args) -> {
 
 			Employee employee1 = new Employee("Jan", "Niezbędny", "Dział produkcji", "Operator wibroprasy");
-			emplRepository.save(new Employee("Piotr", "Wesoły", "Dział produkcji", "Operator węzła betoniarskiego"));
+            Employee employee2 = new Employee("Waldemar", "Pośpieszalski", "Dział produkcji", "Mistrz zmiany");
+            emplRepository.save(new Employee("Piotr", "Wesoły", "Dział produkcji", "Operator węzła betoniarskiego"));
 			emplRepository.save(new Employee("Witold", "Ciekawski", "Dział kontroli jakości", "Brakarz"));
 			emplRepository.save(new Employee("Marian", "Odważny", "Dział produkcji","Brygadzista"));
 			emplRepository.save(new Employee("Krzysztof", "Skuteczny", "Dział utrzymania ruchu","Elektryk"));
@@ -40,7 +41,7 @@ public class EmployeePermissionListApplication {
 			Permission permission2 = new Permission("Uprawnienia elektryczne");
 			Permission permission3 = new Permission("Uprawnienia spawalnicze");
 			Permission permission4 = new Permission("Obsługa AKP");
-			Permission permission5 = new Permission("Uprawnienia na ładowarkę%");
+			Permission permission5 = new Permission("Uprawnienia na ładowarkę");
 
 			permRepository.save(permission1);
 			permRepository.save(permission2);
@@ -53,10 +54,13 @@ public class EmployeePermissionListApplication {
 			permissions.add(permission1);
 			permissions.add(permission2);
 			permissions.add(permission3);
-			permissions.add(permission4);
 
-			employee1.setPermissions(permissions);
+            employee1.setPermissions(permissions);
 			emplRepository.save(employee1);
+
+            employee2.setPermissions(permissions);
+            emplRepository.save(employee2);
+
 
 			User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
 			User user2 = new User("admin", "$2a$08$bCCcGjB03eulCWt3CY0AZew2rVzXFyouUolL5dkL/pBgFkUH9O4J2", "ADMIN");

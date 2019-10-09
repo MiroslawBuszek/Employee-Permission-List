@@ -76,12 +76,12 @@ public class EmployeeController {
             }
             emplRepository.save(employee.get());
             model.addAttribute("employee", permRepository.findById(id));
-            model.addAttribute("permission", permRepository.findAll());
+            model.addAttribute("permissions", permRepository.findAll());
             return "redirect:/employees";
         }
 
         model.addAttribute("developers", emplRepository.findAll());
-        return "redirect:/eemployees";
+        return "redirect:/employees";
 
     }
 

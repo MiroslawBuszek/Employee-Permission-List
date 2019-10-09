@@ -6,6 +6,8 @@ import com.buszek.model.User;
 import com.buszek.repository.EmployeeRepository;
 import com.buszek.repository.PermissionRepository;
 import com.buszek.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +18,8 @@ import java.util.Set;
 
 @SpringBootApplication
 public class EmployeePermissionListApplication {
+
+	private static final Logger log = LoggerFactory.getLogger(EmployeePermissionListApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeePermissionListApplication.class, args);

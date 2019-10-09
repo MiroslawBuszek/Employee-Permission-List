@@ -1,4 +1,4 @@
-package com.buszek;
+package com.buszek.config;
 
 import com.buszek.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +14,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 @ComponentScan("com.buszek")
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebMvcConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserServiceImpl userDetailsService;
 
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
     	http
-    		.authorizeRequests().antMatchers("/static/**", "/signup", "/saveuser").permitAll() // test
+    		.authorizeRequests().antMatchers("/css/**", "/signup", "/saveuser").permitAll() // test
     			.and()
             .authorizeRequests()
                 .anyRequest().authenticated()

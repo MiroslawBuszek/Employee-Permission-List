@@ -1,4 +1,4 @@
-package com.buszek;
+package com.buszek.config;
 
 import com.buszek.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 @ComponentScan("com.buszek")
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebMvcConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserServiceImpl userDetailsService;
 

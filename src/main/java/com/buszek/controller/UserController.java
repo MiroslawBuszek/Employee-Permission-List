@@ -1,6 +1,6 @@
 package com.buszek.controller;
 
-import com.buszek.LoginForm;
+import com.buszek.model.LoginForm;
 import com.buszek.model.User;
 import com.buszek.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

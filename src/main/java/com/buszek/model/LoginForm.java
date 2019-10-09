@@ -1,4 +1,4 @@
-package com.buszek;
+package com.buszek.model;
 
 import javax.validation.constraints.Size;
 

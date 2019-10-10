@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Developer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" th:href="@{../css/bootstrap.min.css}" />	
+</head>
+<body>
+<div class="container">
+	<h1>Add permission</h1>
+	<form th:action="@{/employee/{id}/permissions(id=${employee.id})}" method="get" enctype="multipart/form-data" >
+	<div class="col-md-4">
+		<div class="panel panel-default">
+		 <div class="panel-heading">Employee info</div>
+		 <div class="panel-body" style="padding-left: 5px;">
+			Name: <b th:text="${employee.firstName}" /> <b th:text="${employee.lastName}" /><br/>
+			Position: <span th:text="${employee.position}" /><br/>
+			Department: <span th:text="${employee.department}" /><br/>
+			<br/>Permissions:
+				<span th:each="permission : ${employee.permissions}">
+					<br/>&nbsp;&nbsp;<span th:text="${permission.name}" />
+				</span>
+				<br/>
+				</div>
+		</div>	
+			<div class="col-md-6">
+			<select class="form-control" name="permissionId">
+				<option th:each="permission : ${permissions}"
+					th:value="${permission.permissionid}"
+					th:text="${permission.name}">Permission</option>
+			</select>
+			</div>
+			<input type="submit" name="action" class="btn btn-primary" value="Save"></input>
+			<input type="submit" name="action" class="btn btn-default" value="Cancel"></input>
+	</div>
+	</form>
+</div>
+</body>
+</html>

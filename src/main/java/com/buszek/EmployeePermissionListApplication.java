@@ -30,22 +30,22 @@ public class EmployeePermissionListApplication {
 	public CommandLineRunner App (EmployeeRepository emplRepository, PermissionRepository permRepository, UserRepository urepository) {
 		return (args) -> {
 
-			Employee employee1 = new Employee("Jan", "Niezbędny", "Dział produkcji", "Operator wibroprasy");
-            Employee employee2 = new Employee("Waldemar", "Pośpieszalski", "Dział produkcji", "Mistrz zmiany");
-            emplRepository.save(new Employee("Piotr", "Wesoły", "Dział produkcji", "Operator węzła betoniarskiego"));
-			emplRepository.save(new Employee("Witold", "Ciekawski", "Dział kontroli jakości", "Brakarz"));
-			emplRepository.save(new Employee("Marian", "Odważny", "Dział produkcji","Brygadzista"));
-			emplRepository.save(new Employee("Krzysztof", "Skuteczny", "Dział utrzymania ruchu","Elektryk"));
-			emplRepository.save(new Employee("Adrian", "Potrzebny", "Dział produkcji","Operator wózka widłowego"));
-			emplRepository.save(new Employee("Paweł", "Pracowity", "Dział utrzymania ruchu","Automatyk"));
-			emplRepository.save(new Employee("Mieczysław", "Konieczny", "Dział produkcji","Pakowacz"));
+			Employee employee1 = new Employee("John", "Darrow", "Production", "Operators Foreman");
+            Employee employee2 = new Employee("Paul", "Brecher", "Maintenance", "Mechanic");
+            emplRepository.save(new Employee("Justin", "Frankel", "Production", "Production Handler"));
+			emplRepository.save(new Employee("Ron", "Seber", "Quality Control", "Quality controller"));
+			emplRepository.save(new Employee("Eric", "Olesen", "Production","Production Operator"));
+			emplRepository.save(new Employee("Chris", "Holdcraft", "Maintenance ","Electrician"));
+			emplRepository.save(new Employee("Anthony", "Canavan", "Production","Fork Lift Operator"));
+			emplRepository.save(new Employee("Pete", "Crouse", "Maintenance","Automation Service Engineer"));
+			emplRepository.save(new Employee("Edgard", "Perez", "Warehouse","Packing Operator"));
 
 
-			Permission permission1 = new Permission("Uprawnienia wysokościowe");
-			Permission permission2 = new Permission("Uprawnienia elektryczne");
-			Permission permission3 = new Permission("Uprawnienia spawalnicze");
-			Permission permission4 = new Permission("Obsługa AKP");
-			Permission permission5 = new Permission("Uprawnienia na ładowarkę");
+			Permission permission1 = new Permission("Work at height");
+			Permission permission2 = new Permission("Forklift licence");
+			Permission permission3 = new Permission("Welder certification");
+			Permission permission4 = new Permission("Electrical licence 1kV");
+			Permission permission5 = new Permission("Licence at loader");
 
 			permRepository.save(permission1);
 			permRepository.save(permission2);

@@ -24,7 +24,24 @@ will know what permissions the workers have.
 * Bootstrap - version 3.3.6
 * H2 database - version 1.4.199
 
-## Setup
+## Running the application locally
+There are several ways to run a application your local machine. One way is to run script build.sh directly.
 
+- Download the zip or clone the Git repository.
+```sh
+git clone https://github.com/MiroslawBuszek/EmployeePermissionList
+```
+- Unzip the zip file (if you downloaded one)
+- Run build.sh script to build and start project
+```sh
+build.sh
+```
+- Head out to http://localhost:8080/login
+
+Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
+
+```shell
+mvn spring-boot:run
+```
 
 ## Contact

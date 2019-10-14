@@ -3,6 +3,8 @@ package com.buszek.controller;
 import com.buszek.model.LoginForm;
 import com.buszek.model.User;
 import com.buszek.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,8 @@ import javax.validation.Valid;
 
 @Controller
 public class UserController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private UserRepository repository;
 
@@ -27,7 +31,8 @@ public class UserController {
 
     @RequestMapping(value = "saveuser", method = RequestMethod.POST)
     public String save(@Valid @ModelAttribute("signupform") LoginForm loginForm, BindingResult bindingResult) {
-        System.out.println(bindingResult.toString());
+
+        LOGGER.info("Unexpected error");
         if (!bindingResult.hasErrors()) {
             if (loginForm.getPassword().equals(loginForm.getPasswordCheck())) {
                 String pwd = loginForm.getPassword();
